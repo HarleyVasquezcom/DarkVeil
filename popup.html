@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DarkVeil</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="i18n.js" defer></script>
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <div class="veil">
+    <div class="veil-bar">
+      <span class="veil-title">darkveil — night room</span>
+      <span class="veil-state" id="stateLed" data-state="off"><span data-i18n="statusOff">CLEAR</span></span>
+      <span class="veil-tagline" data-i18n="tagline">whitelisted dark, everywhere else untouched</span>
+    </div>
+
+    <main class="panel">
+      <p class="prompt-line"><span class="ps">darkveil $</span> <button id="toggleBtn" class="btn-toggle" data-i18n="toggle">[ toggle veil ]</button></p>
+      <p class="out" id="out"></p>
+
+      <div class="sliders">
+        <p class="form-line"><span class="ps" id="strengthLabel" data-i18n="strength">strength:</span> <input type="range" id="strengthRange" min="50" max="100" step="1" value="85"> <span id="strengthVal" class="val">85%</span></p>
+        <p class="form-line"><span class="ps" id="sepiaLabel" data-i18n="sepia">sepia:</span> <input type="range" id="sepiaRange" min="0" max="100" step="1" value="8"> <span id="sepiaVal" class="val">8%</span></p>
+        <p class="form-line"><span class="ps" id="brightnessLabel" data-i18n="brightness">brightness:</span> <input type="range" id="brightnessRange" min="-60" max="60" step="1" value="-12"> <span id="brightnessVal" class="val">-12%</span></p>
+      </div>
+
+      <p class="prompt-line sub"><span class="ps" data-i18n="whitelistTitle">whitelist</span></p>
+      <ul id="list" class="list"></ul>
+
+      <p class="form-line add-row">
+        <span class="ps" data-i18n="addHint">current page:</span>
+        <span id="lastHost" class="host">-</span>
+        <button id="addBtn" data-i18n="addBtn">[ add ]</button>
+      </p>
+
+      <p class="form-line lang">
+        <label for="langSel"><span class="ps">lang:</span></label>
+        <select id="langSel" class="sel">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="pt">Português</option>
+          <option value="it">Italiano</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </p>
+
+      <footer class="foot">
+        <span data-i18n="credit">Built by Harley Vásquez</span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

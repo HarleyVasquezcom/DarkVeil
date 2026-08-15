@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DarkVeil — the whitelisted dark</title>
+  <style>
+    :root {
+      --bg: #14091d;
+      --panel: #1d0f2b;
+      --line: #3c2055;
+      --ink: #e9d8f5;
+      --dim: #c4a8e8;
+      --dark: #7a5a9e;
+      --violet: #a78bfa;
+      --moon: #f5e6ff;
+      --mono: 'Consolas', 'Menlo', 'Courier New', monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(120% 90% at 50% 0%, #241238, var(--bg) 65%);
+      color: var(--ink);
+      font-family: var(--mono);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 52px 24px 72px; }
+    header.brand {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+      border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 14px 18px;
+    }
+    .wordmark { font-size: 1.7rem; letter-spacing: 4px; display: block; }
+    .wordmark .moon { color: var(--moon); }
+    .edition { color: var(--dark); font-size: .78rem; letter-spacing: 1px; }
+    select.lang-sel { font: inherit; background: var(--bg); color: var(--ink); border: 1px solid var(--line); padding: 6px 10px; border-radius: 4px; }
+    .led { display: block; color: var(--violet); letter-spacing: 3px; text-transform: uppercase; font-size: .8rem; margin: 34px 0 8px; }
+    h1 { font-size: 2.25rem; margin: 0 0 10px; max-width: 660px; text-shadow: 0 0 14px rgba(167, 139, 250, .45); }
+    .sub { color: var(--dim); max-width: 680px; font-size: 1.05rem; }
+    .feature-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; max-width: 900px; }
+    .feature { border: 1px solid var(--line); border-radius: 6px; padding: 16px; background: rgba(29, 15, 43, .55); }
+    .feature .f-badge { color: var(--violet); font-size: .75rem; letter-spacing: 2px; }
+    .feature strong { display: block; margin-top: 6px; }
+    .feature p { margin: 6px 0 0; color: var(--dim); font-size: .9rem; }
+    .cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: 34px; }
+    .btn-download {
+      display: inline-block; font: inherit; background: var(--moon); color: #1d0f2b; border: none;
+      border-radius: 3px; padding: 13px 26px; text-decoration: none; font-weight: bold; letter-spacing: .5px;
+    }
+    .btn-download:hover { box-shadow: 0 0 18px rgba(245, 230, 255, .55); }
+    .hint { color: var(--dark); font-size: .85rem; }
+    footer { margin-top: 54px; border-top: 1px solid var(--line); padding-top: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--dark); font-size: .85rem; }
+    @media (max-width: 560px) { h1 { font-size: 1.65rem; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="brand">
+      <div class="brand-id">
+        <strong class="wordmark">Dark<span class="moon">Veil</span></strong>
+        <span class="edition">whitelisted dark mode — v1.0.0</span>
+      </div>
+      <select id="langSel" class="lang-sel">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="pt">Português</option>
+        <option value="it">Italiano</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </header>
+
+    <span class="led" data-i18n="ledNo">real css filter · per-site whitelist · three dials</span>
+    <h1 data-i18n="heroTitle">The veil you choose</h1>
+    <p class="sub" data-i18n="heroSub">DarkVeil darkens a page with a genuine CSS filter — invert, hue-rotated, sepia and brightness-tuned — and it only ever lands on the sites you put on your whitelist. Everywhere else stays exactly as it was.</p>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <span class="f-badge" data-i18n="f1b">REAL</span>
+        <strong data-i18n="f1t">Genuine CSS filter</strong>
+        <p data-i18n="f1d">invert() + hue-rotate(180deg) + sepia() + brightness(), applied to the page root in real time.</p>
+      </div>
+      <div class="feature">
+        <span class="f-badge" data-i18n="f2b">WHITELIST</span>
+        <strong data-i18n="f2t">Per-site, by choice</strong>
+        <p data-i18n="f2d">Veil only what you add. The probe verifies that non-whitelisted hosts stay pixel-identical to baseline.</p>
+      </div>
+      <div class="feature">
+        <span class="f-badge" data-i18n="f3b">DIALS</span>
+        <strong data-i18n="f3t">Strength, sepia, brightness</strong>
+        <p data-i18n="f3d">Three sliders tune the veil; every change is persisted and re-applied instantly, including after reloads.</p>
+      </div>
+      <div class="feature">
+        <span class="f-badge" data-i18n="f4b">MINIMAL</span>
+        <strong data-i18n="f4t">One permission</strong>
+        <p data-i18n="f4d">Just storage. No tabs, no webRequest, no remote code — the veil never leaves your machine.</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn-download" href="darkveil.zip" download data-i18n="cta">Download DarkVeil (.zip)</a>
+      <span class="hint" data-i18n="ctaHint">load it at chrome://extensions → Developer mode → Load unpacked</span>
+    </div>
+
+    <footer>
+      <span data-i18n="credit">Built by Harley Vásquez</span>
+      <span data-i18n="foot">Chromium MV3 · one permission (storage) · no tracking</span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var DICT = {
+        en: {
+          ledNo: 'real css filter · per-site whitelist · three dials',
+          heroTitle: 'The veil you choose',
+          heroSub: 'DarkVeil darkens a page with a genuine CSS filter — invert, hue-rotated, sepia and brightness-tuned — and it only ever lands on the sites you put on your whitelist. Everywhere else stays exactly as it was.',
+          f1b: 'REAL', f1t: 'Genuine CSS filter', f1d: 'invert() + hue-rotate(180deg) + sepia() + brightness(), applied to the page root in real time.',
+          f2b: 'WHITELIST', f2t: 'Per-site, by choice', f2d: 'Veil only what you add. The probe verifies that non-whitelisted hosts stay pixel-identical to baseline.',
+          f3b: 'DIALS', f3t: 'Strength, sepia, brightness', f3d: 'Three sliders tune the veil; every change is persisted and re-applied instantly, including after reloads.',
+          f4b: 'MINIMAL', f4t: 'One permission', f4d: 'Just storage. No tabs, no webRequest, no remote code — the veil never leaves your machine.',
+          cta: 'Download DarkVeil (.zip)', ctaHint: 'load it at chrome://extensions → Developer mode → Load unpacked',
+          credit: 'Built by Harley Vásquez', foot: 'Chromium MV3 · one permission (storage) · no tracking',
+        },
+        es: {
+          ledNo: 'filtro css real · lista blanca por sitio · tres diales',
+          heroTitle: 'El velo oscuro que eliges tú',
+          heroSub: 'DarkVeil oscurece una página con un filtro CSS genuino — invertido, con giro de tono, sepia y brillo ajustados — y solo aterriza en los sitios que pones en tu lista blanca. Todo lo demás queda exactamente como estaba.',
+          f1b: 'REAL', f1t: 'Filtro CSS genuino', f1d: 'invert() + hue-rotate(180deg) + sepia() + brightness(), aplicados a la raíz de la página en tiempo real.',
+          f2b: 'LISTA BLANCA', f2t: 'Por sitio, a tu elección', f2d: 'Vela solo lo que agregas. La probe verifica que los hosts no listados quedan idénticos a la línea base.',
+          f3b: 'DIALES', f3t: 'Intensidad, sepia, brillo', f3d: 'Tres controles ajustan el velo; cada cambio se guarda y se reaplica al instante, también tras recargar.',
+          f4b: 'MÍNIMO', f4t: 'Un solo permiso', f4d: 'Solo storage. Sin tabs, sin webRequest, sin código remoto — el velo nunca sale de tu máquina.',
+          cta: 'Descargar DarkVeil (.zip)', ctaHint: 'cárgalo en chrome://extensions → Modo desarrollador → Cargar descomprimida',
+          credit: 'Creado por Harley Vásquez', foot: 'Chromium MV3 · un permiso (storage) · sin rastreo',
+        },
+        fr: {
+          ledNo: 'filtre css réel · liste blanche par site · trois cadrans',
+          heroTitle: 'Le voile que tu choisis',
+          heroSub: 'DarkVeil assombrit une page avec un vrai filtre CSS — inversé, teinte pivotée, sépia et luminosité réglées — et il ne se pose que sur les sites de ta liste blanche. Partout ailleurs, rien ne change.',
+          f1b: 'RÉEL', f1t: 'Vrai filtre CSS', f1d: 'invert() + hue-rotate(180deg) + sepia() + brightness(), appliqués à la racine de la page en temps réel.',
+          f2b: 'LISTE BLANCHE', f2t: 'Par site, par choix', f2d: 'Voile seulement ce que tu ajoutes. La sonde vérifie que les hôtes non listés restent identiques à la ligne de base.',
+          f3b: 'CADRANS', f3t: 'Intensité, sépia, luminosité', f3d: 'Trois curseurs règlent le voile ; chaque changement est persisté et réappliqué instantanément, y compris après rechargement.',
+          f4b: 'MINIMAL', f4t: 'Une seule permission', f4d: 'Juste storage. Pas de tabs, pas de webRequest, pas de code distant — le voile ne quitte jamais ta machine.',
+          cta: 'Télécharger DarkVeil (.zip)', ctaHint: 'chargez-le dans chrome://extensions → Mode développeur → Charger l\'extension non empaquetée',
+          credit: 'Créé par Harley Vásquez', foot: 'Chromium MV3 · une permission (storage) · aucun pistage',
+        },
+        pt: {
+          ledNo: 'filtro css real · lista branca por site · três dials',
+          heroTitle: 'O véu que você escolhe',
+          heroSub: 'O DarkVeil escurece uma página com um filtro CSS genuíno — invertido, com giro de matiz, sépia e brilho ajustados — e só pousa nos sites da sua lista branca. Todo o resto permanece exatamente como estava.',
+          f1b: 'REAL', f1t: 'Filtro CSS genuíno', f1d: 'invert() + hue-rotate(180deg) + sepia() + brightness(), aplicados à raiz da página em tempo real.',
+          f2b: 'LISTA BRANCA', f2t: 'Por site, por escolha', f2d: 'Vele apenas o que você adiciona. A probe verifica que hosts não listados ficam idênticos à linha de base.',
+          f3b: 'DIALS', f3t: 'Intensidade, sépia, brilho', f3d: 'Três controles ajustam o véu; cada mudança é salva e reaplicada na hora, inclusive após recarregar.',
+          f4b: 'MÍNIMO', f4t: 'Uma permissão', f4d: 'Apenas storage. Sem tabs, sem webRequest, sem código remoto — o véu nunca sai da sua máquina.',
+          cta: 'Baixar DarkVeil (.zip)', ctaHint: 'carregue em chrome://extensions → Modo desenvolvedor → Carregar sem compactação',
+          credit: 'Criado por Harley Vásquez', foot: 'Chromium MV3 · uma permissão (storage) · sem rastreio',
+        },
+        it: {
+          ledNo: 'filtro css reale · whitelist per sito · tre manopole',
+          heroTitle: 'Il velo che scegli',
+          heroSub: 'DarkVeil oscura una pagina con un vero filtro CSS — invertita, tinta ruotata, seppia e luminosità regolate — e atterra solo sui siti della tua whitelist. Tutto il resto resta esattamente com\'era.',
+          f1b: 'REALE', f1t: 'Vero filtro CSS', f1d: 'invert() + hue-rotate(180deg) + sepia() + brightness(), applicati alla radice della pagina in tempo reale.',
+          f2b: 'WHITELIST', f2t: 'Per sito, a scelta', f2d: 'Vela solo ciò che aggiungi. La probe verifica che gli host non elencati restino identici alla baseline.',
+          f3b: 'MANOPOLE', f3t: 'Intensità, seppia, luminosità', f3d: 'Tre slider regolano il velo; ogni modifica è salvata e riapplicata subito, anche dopo il ricaricamento.',
+          f4b: 'MINIMO', f4t: 'Un solo permesso', f4d: 'Solo storage. Niente tabs, niente webRequest, niente codice remoto — il velo non lascia mai la tua macchina.',
+          cta: 'Scarica DarkVeil (.zip)', ctaHint: 'caricala in chrome://extensions → Modalità sviluppatore → Carica estensione non impacchettata',
+          credit: 'Creato da Harley Vásquez', foot: 'Chromium MV3 · un permesso (storage) · nessun tracciamento',
+        },
+        de: {
+          ledNo: 'echter css-filter · whitelist pro seite · drei regler',
+          heroTitle: 'Der Schleier, den du wählst',
+          heroSub: 'DarkVeil verdunkelt eine Seite mit einem echten CSS-Filter — invertiert, farbtongedreht, sepia- und helligkeitsabgestimmt — und landet nur auf Seiten deiner Whitelist. Überall sonst bleibt alles wie es ist.',
+          f1b: 'ECHT', f1t: 'Echter CSS-Filter', f1d: 'invert() + hue-rotate(180deg) + sepia() + brightness(), in Echtzeit auf die Seitenwurzel angewendet.',
+          f2b: 'WHITELIST', f2t: 'Pro Seite, frei gewählt', f2d: 'Verschleiere nur, was du hinzufügst. Die Probe prüft, dass nicht gelistete Hosts identisch zur Baseline bleiben.',
+          f3b: 'REGLER', f3t: 'Stärke, Sepia, Helligkeit', f3d: 'Drei Regler stimmen den Schleier ab; jede Änderung wird gespeichert und sofort neu angewendet, auch nach dem Neuladen.',
+          f4b: 'MINIMAL', f4t: 'Eine Berechtigung', f4d: 'Nur storage. Keine Tabs, kein webRequest, kein Remote-Code — der Schleier verlässt deine Maschine nie.',
+          cta: 'DarkVeil herunterladen (.zip)', ctaHint: 'lade sie in chrome://extensions → Entwicklermodus → Entpackte Erweiterung laden',
+          credit: 'Erstellt von Harley Vásquez', foot: 'Chromium MV3 · eine Berechtigung (storage) · kein Tracking',
+        },
+      };
+      var langs = { en: 'English', es: 'Español', fr: 'Français', pt: 'Português', it: 'Italiano', de: 'Deutsch' };
+      var KEY = 'dv:landingLang';
+      function apply(lang) {
+        var d = DICT[lang] || DICT.en;
+        document.documentElement.lang = lang;
+        var els = document.querySelectorAll('[data-i18n]');
+        for (var i = 0; i < els.length; i++) {
+          var k = els[i].getAttribute('data-i18n');
+          if (d[k] !== undefined) els[i].textContent = d[k];
+        }
+        document.title = d.heroTitle + ' — DarkVeil';
+      }
+      var sel = document.getElementById('langSel');
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var lang = saved && DICT[saved] ? saved : (navigator.language || 'en').toLowerCase().split('-')[0];
+      if (!DICT[lang]) lang = 'en';
+      sel.value = lang;
+      apply(lang);
+      for (var i = 0; i < sel.options.length; i++) sel.options[i].textContent = langs[sel.options[i].value];
+      sel.addEventListener('change', function () {
+        apply(sel.value);
+        try { localStorage.setItem(KEY, sel.value); } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+:root {
+  --bg: #14091d;
+  --panel: #1d0f2b;
+  --line: #3c2055;
+  --ink: #e9d8f5;
+  --dim: #c4a8e8;
+  --dark: #7a5a9e;
+  --violet: #a78bfa;
+  --moon: #f5e6ff;
+  --ok: #34d399;
+  --err: #f87171;
+  --mono: 'Consolas', 'Menlo', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  width: 340px;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.veil-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  letter-spacing: 1px;
+}
+
+.veil-title { color: var(--ink); flex: 1; }
+.veil-state { color: var(--dark); font-weight: bold; }
+.veil-state[data-state='on'] { color: var(--moon); text-shadow: 0 0 8px rgba(245, 230, 255, .7); }
+.veil-tagline { color: var(--dark); font-size: 11px; }
+
+.panel { padding: 12px 14px 10px; }
+
+.prompt-line { margin: 0 0 10px; }
+.prompt-line.sub { margin-top: 14px; }
+
+.ps { color: var(--dim); }
+
+button {
+  font: inherit;
+  background: var(--panel);
+  color: var(--violet);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--violet); }
+.btn-toggle.on { color: var(--moon); border-color: var(--moon); box-shadow: 0 0 10px rgba(245, 230, 255, .3); }
+
+.out { min-height: 18px; margin: 0 0 8px; color: var(--dim); font-size: 12px; }
+.out.ok { color: var(--ok); }
+.out.error { color: var(--err); }
+
+.form-line { margin: 0 0 10px; display: flex; align-items: center; gap: 6px; }
+
+input[type="range"] { flex: 1; accent-color: var(--violet); }
+.val { color: var(--ink); width: 44px; text-align: right; letter-spacing: 0; }
+
+.list { list-style: none; margin: 0 0 10px; padding: 0; max-height: 120px; overflow-y: auto; }
+.list li { display: flex; align-items: center; gap: 6px; padding: 3px 4px; border-bottom: 1px dotted var(--line); }
+.list li .host { flex: 1; word-break: break-all; }
+.list .empty-note { color: var(--dark); border: none; }
+
+.host { color: var(--ink); word-break: break-all; }
+.add-row .host { color: var(--dim); max-width: 160px; }
+
+.lang { margin-bottom: 4px; }
+.foot { color: var(--dark); font-size: 11px; margin-top: 10px; border-top: 1px solid var(--line); padding-top: 6px; }

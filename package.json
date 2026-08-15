@@ -1,0 +1,16 @@
+{
+  "name": "darkveil",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DarkVeil — whitelisted dark mode for Chromium (MV3): real CSS filter (invert + hue-rotate + sepia + brightness), per-site whitelist, three sliders.",
+  "type": "module",
+  "scripts": {
+    "probe": "node tests/probe.mjs",
+    "zip": "node tools/zip.mjs",
+    "gen-icons": "node tools/gen-icons.mjs"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "puppeteer": "^25.7.0"
+  }
+}
