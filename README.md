@@ -19,7 +19,7 @@
 
 ## Install / Instalación
 
-1. Download `darkveil.zip` from the [landing page](https://darkveil-xxx.vercel.app) (or generate it: `npm run zip`).
+1. Download `darkveil.zip` from the [landing page](https://darkveil-two.vercel.app) (or generate it: `npm run zip`).
 2. Open `chrome://extensions`, enable **Developer mode / Modo desarrollador**.
 3. Unzip and click **Load unpacked / Cargar descomprimida**, select the folder.
 
