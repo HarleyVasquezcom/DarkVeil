@@ -50,4 +50,4 @@ tools/zip.mjs        reproducible ZIP (fixed timestamps) via archiver
 tools/gen-icons.mjs  PNG icon generator (crc32 + zlib, no native deps)
 ```
 
-Built by Harley Vásquez. / Creado por Harley Vásquez.
+Built by [Harley Vásquez](https://www.linkedin.com/in/harleyvasquez/). / Creado por [Harley Vásquez](https://www.linkedin.com/in/harleyvasquez/).
